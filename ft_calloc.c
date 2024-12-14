@@ -6,16 +6,30 @@
 /*   By: pahernan <pahernan@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/12 13:58:44 by pahernan          #+#    #+#             */
-/*   Updated: 2024/12/14 10:29:22 by pahernan         ###   ########.fr       */
+/*   Updated: 2024/12/14 12:06:00 by pahernan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <stdlib.h>
 void *ft_calloc(unsigned int num, unsigned int size)
 {
+     int *arr;
+     int    i;
 
+     i = 0;
+     
+     arr = malloc(num * size);
+
+     while (arr[i])
+     {
+        ((unsigned char *)arr)[i] = '\0';
+       i++;
+     }
+
+    free(arr);
 }
 #include <stdio.h>
-#include <stdlib.h>
+
 
 int main() {
     int *arr;
@@ -27,9 +41,7 @@ int main() {
 	i = 0;
     j = 0;
 
-    arr = (int *)calloc(num_elements, sizeof(int));
-
-    arr[2] = 10;
+    arr = (int *)ft_calloc(num_elements, sizeof(int));
 
 
     while (i < num_elements) {  
@@ -39,7 +51,7 @@ int main() {
     free(arr);
 
 
- arr2 = (int *)malloc(num_elements * sizeof(int));
+/* arr2 = (int *)malloc(num_elements * sizeof(int));
 
    arr2[4] = 5;
 
@@ -48,7 +60,7 @@ int main() {
         printf("arr2[%d] = %d\n", j, arr2[j]);
         j++;
     }
-    free(arr2);
+    free(arr2);*/
     
     return 0;
 }
