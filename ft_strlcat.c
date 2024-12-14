@@ -6,12 +6,12 @@
 /*   By: pahernan <pahernan@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/02 15:02:15 by pahernan          #+#    #+#             */
-/*   Updated: 2024/12/11 11:52:23 by pahernan         ###   ########.fr       */
+/*   Updated: 2024/12/14 10:21:47 by pahernan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 /*#include "libft.h"*/
-unsigned int	ft_strlcat(char *dest,const char *src, unsigned int size)
+unsigned int	ft_strlcat(char *dest, const char *src, unsigned int size)
 {
 	unsigned int	i;
 	unsigned int	j;

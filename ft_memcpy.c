@@ -6,7 +6,7 @@
 /*   By: pahernan <pahernan@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/11 11:12:25 by pahernan          #+#    #+#             */
-/*   Updated: 2024/12/12 13:58:12 by pahernan         ###   ########.fr       */
+/*   Updated: 2024/12/14 10:22:01 by pahernan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,10 @@
 
 void	*ft_memcpy(void *dest, const void *src, unsigned int n)
 {
-	int	i;
+	unsigned int	i;
 
 	i = 0;
-	while ((((char *)dest)[i] != 0 || ((char *)src)[i] != 0) && n > 0)
+	while (n > 0)
 	{
 		((char *)dest)[i] = ((char *)src)[i];
 		i++;
