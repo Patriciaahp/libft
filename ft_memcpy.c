@@ -1,38 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_toupper.c                                       :+:      :+:    :+:   */
+/*   ft_memcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pahernan <pahernan@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/12/02 14:33:27 by pahernan          #+#    #+#             */
-/*   Updated: 2024/12/10 10:13:47 by pahernan         ###   ########.fr       */
+/*   Created: 2024/12/11 11:12:25 by pahernan          #+#    #+#             */
+/*   Updated: 2024/12/12 13:58:12 by pahernan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 /*#include "libft.h"*/
-int	ft_toupper(char a)
+
+void	*ft_memcpy(void *dest, const void *src, unsigned int n)
 {
-	if (a >= 'a' && a <= 'z')
+	int	i;
+
+	i = 0;
+	while ((((char *)dest)[i] != 0 || ((char *)src)[i] != 0) && n > 0)
 	{
-		a = a - 32 ;
-		return (a);
+		((char *)dest)[i] = ((char *)src)[i];
+		i++;
+		n--;
 	}
-	return (a);
+	return (dest);
 }
 /*#include <stdio.h>
-#include <ctype.h>
-int main(void)
+#include <string.h>
+int main (void)
 {
-    char a = 'C';
-    char b = 'C';
+	char dest[20] = "hola";
+	char src[20] = "adios";
+	
+	printf("%s\n", dest);
+	printf("%s\n", memcpy(dest, src, 3));
+	printf("%s\n", ft_memcpy(dest, src, 3));
+	printf("%s\n", dest);
 
-    int result = ft_toupper(a);
-    int result2 = toupper(b);
-    printf("%d\n", result);
-    printf("%d\n", result2);
-        printf("%c\n", a);
-    printf("%c\n", b);
-}
-
-*/
+}*/

@@ -1,38 +1,43 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_toupper.c                                       :+:      :+:    :+:   */
+/*   ft_bzero.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pahernan <pahernan@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/12/02 14:33:27 by pahernan          #+#    #+#             */
-/*   Updated: 2024/12/10 10:13:47 by pahernan         ###   ########.fr       */
+/*   Created: 2024/12/05 13:35:26 by pahernan          #+#    #+#             */
+/*   Updated: 2024/12/11 09:13:20 by pahernan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-/*#include "libft.h"*/
-int	ft_toupper(char a)
+//#include "libft.h"
+void	ft_bzero(void *s, unsigned int n)
 {
-	if (a >= 'a' && a <= 'z')
+	int	i;
+
+	i = 0;
+	while (n > 0)
 	{
-		a = a - 32 ;
-		return (a);
+		((char *)s)[i] = '\0';
+		n--;
+		i++;
 	}
-	return (a);
 }
-/*#include <stdio.h>
-#include <ctype.h>
+
+/*
+#include <stdio.h>
+#include <string.h>
 int main(void)
 {
-    char a = 'C';
-    char b = 'C';
+    char a[] = "sdfgh ds g";
+	char c[] = "sdfgh ds g";
+	int b = 1;
 
-    int result = ft_toupper(a);
-    int result2 = toupper(b);
-    printf("%d\n", result);
-    printf("%d\n", result2);
-        printf("%c\n", a);
-    printf("%c\n", b);
+printf("%s\n", a);
+   ft_bzero(a, b);
+   printf("%s\n", a);
+   printf("%s\n", c);
+     bzero(c, b);
+	 printf("%s\n", c);
 }
-
 */

@@ -1,38 +1,45 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_toupper.c                                       :+:      :+:    :+:   */
+/*   ft_strrchr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pahernan <pahernan@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/12/02 14:33:27 by pahernan          #+#    #+#             */
-/*   Updated: 2024/12/10 10:13:47 by pahernan         ###   ########.fr       */
+/*   Created: 2024/12/05 15:56:17 by pahernan          #+#    #+#             */
+/*   Updated: 2024/12/10 11:08:11 by pahernan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 /*#include "libft.h"*/
-int	ft_toupper(char a)
+char	*ft_strrchr(const char *s, int c)
 {
-	if (a >= 'a' && a <= 'z')
+	unsigned int	i;
+
+	i = 0;
+	while ((s[i] != '\0'))
 	{
-		a = a - 32 ;
-		return (a);
+		i++;
 	}
-	return (a);
+	while (i > 0)
+	{
+		if (s[i] == (char)c)
+		{
+			return ((char *)&s[i]);
+		}
+		i--;
+	}
+	return ("null");
 }
 /*#include <stdio.h>
-#include <ctype.h>
-int main(void)
+#include <string.h>
+int main (void)
 {
-    char a = 'C';
-    char b = 'C';
+	char *a = "hoelalelxelz";
+	char *b = "hoelalelxelz";
+	int c = 'e';
 
-    int result = ft_toupper(a);
-    int result2 = toupper(b);
-    printf("%d\n", result);
-    printf("%d\n", result2);
-        printf("%c\n", a);
-    printf("%c\n", b);
+	  printf("%s\n", ft_strrchr(a, c));
+	  printf("%s\n", strrchr(b, c));
 }
 
 */

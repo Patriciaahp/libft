@@ -6,15 +6,28 @@
 /*   By: pahernan <pahernan@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/02 13:53:43 by pahernan          #+#    #+#             */
-/*   Updated: 2024/12/02 14:02:07 by pahernan         ###   ########.fr       */
+/*   Updated: 2024/12/11 09:14:36 by pahernan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int ft_isdigit (int a)
+/*#include "libft.h"*/
+int	ft_isdigit(int c)
 {
-    if (a >= '0' && a <= '9')
-    {
-        return (2048);
-    }
-    return (0);
+	if (c >= '0' && c <= '9')
+	{
+		return (c);
+	}
+	return (0);
 }
+/*#include <stdio.h>
+#include <ctype.h>
+int main(void)
+{
+    char a = '4';
+
+    int result = ft_isdigit(a);
+    int result2 = isdigit(a);
+    printf("%d\n", result);
+    printf("%d\n", result2);
+}
+*/

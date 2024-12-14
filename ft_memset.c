@@ -1,38 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_toupper.c                                       :+:      :+:    :+:   */
+/*   ft_memset.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pahernan <pahernan@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/12/02 14:33:27 by pahernan          #+#    #+#             */
-/*   Updated: 2024/12/10 10:13:47 by pahernan         ###   ########.fr       */
+/*   Created: 2024/12/04 12:48:27 by pahernan          #+#    #+#             */
+/*   Updated: 2024/12/11 09:36:05 by pahernan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 /*#include "libft.h"*/
-int	ft_toupper(char a)
+void	*ft_memset(void *s, int c, unsigned int n)
 {
-	if (a >= 'a' && a <= 'z')
+	int	i;
+
+	i = 0;
+	while (n > 0)
 	{
-		a = a - 32 ;
-		return (a);
+		((char *)s)[i] = c;
+		i++;
+		n--;
 	}
-	return (a);
+	return (s);
 }
+
 /*#include <stdio.h>
-#include <ctype.h>
+#include <string.h>
 int main(void)
 {
-    char a = 'C';
-    char b = 'C';
-
-    int result = ft_toupper(a);
-    int result2 = toupper(b);
-    printf("%d\n", result);
-    printf("%d\n", result2);
-        printf("%c\n", a);
-    printf("%c\n", b);
+  char str[20] = "Hello";
+    
+   
+    ft_memset(str, 'A',15);
+	printf("%s\n", str); 
+    memset(str, 'B',15);
+    printf("%s\n", str);  
+    return 0;
 }
-
 */

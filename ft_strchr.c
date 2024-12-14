@@ -1,38 +1,42 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_toupper.c                                       :+:      :+:    :+:   */
+/*   ft_strchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pahernan <pahernan@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/12/02 14:33:27 by pahernan          #+#    #+#             */
-/*   Updated: 2024/12/10 10:13:47 by pahernan         ###   ########.fr       */
+/*   Created: 2024/12/04 13:17:34 by pahernan          #+#    #+#             */
+/*   Updated: 2024/12/11 11:52:26 by pahernan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 /*#include "libft.h"*/
-int	ft_toupper(char a)
+char	*ft_strchr(const char *s, int c)
 {
-	if (a >= 'a' && a <= 'z')
+	unsigned int	i;
+	unsigned int	j;
+
+	j = 0;
+	i = 0;
+	while ((s[i] != '\0'))
 	{
-		a = a - 32 ;
-		return (a);
+		if (s[i] == c)
+		{
+			return (&s[i]);
+		}
+		i++;
 	}
-	return (a);
+	return ("null");
 }
 /*#include <stdio.h>
-#include <ctype.h>
-int main(void)
+#include <string.h>
+int main (void)
 {
-    char a = 'C';
-    char b = 'C';
+	char *a = "holaghjofgjho";
+	char *b = "holaghjofgjho";
+	int c = 'o';
 
-    int result = ft_toupper(a);
-    int result2 = toupper(b);
-    printf("%d\n", result);
-    printf("%d\n", result2);
-        printf("%c\n", a);
-    printf("%c\n", b);
+	  printf("%s\n", ft_strchr(a, c));
+	  printf("%s\n", strchr(b, c));
 }
-
 */
