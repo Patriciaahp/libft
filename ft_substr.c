@@ -1,49 +1,44 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_calloc.c                                        :+:      :+:    :+:   */
+/*   ft_substr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pahernan <pahernan@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/12/12 13:58:44 by pahernan          #+#    #+#             */
-/*   Updated: 2024/12/16 08:45:04 by pahernan         ###   ########.fr       */
+/*   Created: 2024/12/16 09:12:42 by pahernan          #+#    #+#             */
+/*   Updated: 2024/12/16 11:39:12 by pahernan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 
-void	*ft_calloc(size_t num, size_t size)
+char	*ft_substr(char const *s, unsigned int start,
+size_t len)
 {
-	int	*arr;
-	int	i;
+	char	*sub;
+	int		i;
+	int		j;
 
-	i = 0;
-	arr = malloc(num * size);
-	while (((char *)arr)[i])
+	i = start;
+	j = 0;
+	sub = malloc(sizeof(char) * len);
+	while (len > 0)
 	{
-		((char *)arr)[i] = '\0';
+		sub[j] = s[i];
 		i++;
+		j++;
+		len--;
 	}
-	return (arr);
+	return (sub);
 }
 
 /*#include <stdio.h>
-int main(void) {
-    int *arr;
-    int *arr2;
-    size_t num_elements = 5;  
-	int i;
-    int j;
+int main (void)
+{
+	char *str = "holahola";
+	int start = 2;
+	size_t len = 3;
 
-	i = 0;
-    j = 0;
+	printf("%s\n", ft_substr(str, start, len));
 
-    arr = (int *)ft_calloc(num_elements, sizeof(int));
-
-
-    while (i < num_elements) {  
-        printf("arr[%d] = %d\n", i, arr[i]);
-        i++;
-    }
-    free(arr);
 }*/

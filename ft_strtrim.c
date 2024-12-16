@@ -1,49 +1,46 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_calloc.c                                        :+:      :+:    :+:   */
+/*   ft_strtrim.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pahernan <pahernan@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/12/12 13:58:44 by pahernan          #+#    #+#             */
-/*   Updated: 2024/12/16 08:45:04 by pahernan         ###   ########.fr       */
+/*   Created: 2024/12/16 10:08:54 by pahernan          #+#    #+#             */
+/*   Updated: 2024/12/16 11:51:19 by pahernan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 
-void	*ft_calloc(size_t num, size_t size)
+char	*ft_strtrim(char const *s1, char const *set)
 {
-	int	*arr;
-	int	i;
+	char	*s2;
+	int		i;
+	int		j;
 
 	i = 0;
-	arr = malloc(num * size);
-	while (((char *)arr)[i])
+	j = 0;
+	while (s1[i] != ((char *)set)[j])
+		i++;
+	s2 = malloc(sizeof(s1) * i + 1);
+	i = 0;
+	while (s1[i] != ((char *)set)[j])
 	{
-		((char *)arr)[i] = '\0';
+		s2[i] = s1[i];
 		i++;
 	}
-	return (arr);
+	s2[i] = '\0';
+	if (s2 != NULL)
+	{
+		return (s2);
+	}
+	return (NULL);
 }
 
 /*#include <stdio.h>
-int main(void) {
-    int *arr;
-    int *arr2;
-    size_t num_elements = 5;  
-	int i;
-    int j;
-
-	i = 0;
-    j = 0;
-
-    arr = (int *)ft_calloc(num_elements, sizeof(int));
-
-
-    while (i < num_elements) {  
-        printf("arr[%d] = %d\n", i, arr[i]);
-        i++;
-    }
-    free(arr);
+int main (void)
+{
+	char *s1 = "holazhola";
+	char *set = "z";
+	printf("%s\n", ft_strtrim(s1, set));
 }*/

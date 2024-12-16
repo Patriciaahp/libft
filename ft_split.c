@@ -1,47 +1,56 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdup.c                                        :+:      :+:    :+:   */
+/*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pahernan <pahernan@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/12/12 14:52:00 by pahernan          #+#    #+#             */
-/*   Updated: 2024/12/16 11:06:39 by pahernan         ###   ########.fr       */
+/*   Created: 2024/12/16 10:51:27 by pahernan          #+#    #+#             */
+/*   Updated: 2024/12/16 12:33:07 by pahernan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 
-char	*ft_strdup(const char *string)
+char	**ft_split(char const *s, char c)
 {
-	char	*string2;
 	int		i;
+	int		j;
+	int		k;
+	int		count;
+	char	*s2;
+	char	*s3;
 
+	j = 0;
 	i = 0;
-	while (string[i])
+	k = 0;
+	count = 0;
+	while (s[i])
 		i++;
-	string2 = malloc(sizeof(char) * (i + 1));
+	s2 = malloc (sizeof(char) * i);
+	s3 = malloc (sizeof(char) * i);
 	i = 0;
-	while (string[i] != '\0')
+	while (s[i] != '\0')
 	{
-		string2[i] = string[i];
+		s2[j] = s[i];
+		if (s[i] == c)
+		{
+			count++;
+			s3[k] = *s2;
+			j = 0;
+			k++;
+		}
 		i++;
+		j++;
 	}
-	string2[i] = '\0';
-	if (string2 != NULL)
-		return (string2);
-	return (NULL);
+	
+	return (s3);
 }
-/*#include <stdio.h>
-#include <string.h>
-int main(void)
+#include <stdio.h>
+int main (void)
 {
- char *s1 = "hola";
- char *s2;
-s2 = ft_strdup(s1);
-
-      printf("The new string is: %s\n", s2);
-	
+	char *s = "holazholazholaz";
+	char c = 'z';
+	printf("%s\n", ft_split(s, c));
 	return (0);
-	
-}*/
+}

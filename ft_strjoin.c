@@ -1,47 +1,56 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdup.c                                        :+:      :+:    :+:   */
+/*   ft_strjoin.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pahernan <pahernan@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/12/12 14:52:00 by pahernan          #+#    #+#             */
-/*   Updated: 2024/12/16 11:06:39 by pahernan         ###   ########.fr       */
+/*   Created: 2024/12/16 09:54:20 by pahernan          #+#    #+#             */
+/*   Updated: 2024/12/16 11:41:56 by pahernan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
-
-char	*ft_strdup(const char *string)
+strlcpy 
+char	*ft_strjoin(char const *s1, char const *s2)
 {
-	char	*string2;
+	char	*s3;
 	int		i;
+	int		j;
+	int		k;
 
 	i = 0;
-	while (string[i])
+	j = 0;
+	k = 0;
+	while (s1[i])
 		i++;
-	string2 = malloc(sizeof(char) * (i + 1));
+	while (s2[j])
+		j++;
+	s3 = malloc(sizeof(char) * (i + j + 1));
 	i = 0;
-	while (string[i] != '\0')
+	j = 0;
+	while (s1[i] != '\0')
 	{
-		string2[i] = string[i];
+		s3[k] = s1[i];
 		i++;
+		k++;
 	}
-	string2[i] = '\0';
-	if (string2 != NULL)
-		return (string2);
+	while (s2[j] != '\0')
+	{
+		s3[k] = s2[j];
+		j++;
+		k++;
+	}
+	s3[k] = '\0';
+	if (s3 != NULL)
+		return (s3);
 	return (NULL);
 }
-/*#include <stdio.h>
-#include <string.h>
-int main(void)
+#include <stdio.h>
+int main (void)
 {
- char *s1 = "hola";
- char *s2;
-s2 = ft_strdup(s1);
-
-      printf("The new string is: %s\n", s2);
-	
+	char *s1 = "hola";
+	char *s2 = "gato";
+	printf("%s\n", ft_strjoin(s1, s2));
 	return (0);
-	
-}*/
+}
