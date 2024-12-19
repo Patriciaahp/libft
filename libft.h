@@ -1,0 +1,4 @@
+#ifndef
+#define 
+typedef
+#endif
