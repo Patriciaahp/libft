@@ -12,6 +12,23 @@
 
 #include <stdlib.h>
 
+static void find_char(char const *s, char c, int *i, char **s3, int *k, int *l)
+{
+		while (s[*i] != '\0')
+	{
+		if (s[*i] == c)
+		{
+			(*k)++;
+			*l = 0;
+			(*i)++;
+		}
+		if (*l == 0)
+		s3[*k] = (char *)malloc((*i + 1) * sizeof(char));
+		s3[*k][*l] = s[*i];
+		(*l)++;
+		(*i)++;
+	}
+}
 char	**ft_split(char const *s, char c)
 {
 	int		i;
@@ -28,26 +45,14 @@ char	**ft_split(char const *s, char c)
 	if (!s3)
 		return (NULL);
 	i = 0;
-	while (s[i] != '\0')
-	{
-		if (s[i] == c)
-		{
-			k++;
-			l = 0;
-			i++;
-		}
-		if (l == 0)
-			s3[k] = (char *)malloc((i + 1) * sizeof(char));
-		s3[k][l] = s[i];
-		l++;
-		i++;
-	}
+find_char(s, c, &i, s3, &k, &l);
+			
 	s3[k][l] = '\0';
 	s3[k + 1] = NULL;
 	return (s3);
 }
 
-/*#include <stdio.h>
+#include <stdio.h>
 int main(void)
 {
     char *s = "holazholazholazhola";
@@ -63,4 +68,4 @@ int main(void)
     free(result);
 
     return 0;
-}*/
+}
