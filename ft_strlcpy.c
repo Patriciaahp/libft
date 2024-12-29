@@ -19,18 +19,19 @@ size_t	ft_strlcpy(char *dest, const char *src, size_t size)
 
 	j = 0;
 	i = 0;
-	while ((src[j] != '\0') && (size != 0))
-	{
-		dest[i] = src[j];
-		i++;
+	while (src[j] != '\0')
 		j++;
+	if (size == 0)
+		return (j);
+	while ((src[i] != '\0') && (size != 1))
+	{
+		dest[i] = src[i];
+		i++;
 		size--;
 	}
 	if (size > 0)
-	{
 		dest[i] = '\0';
-	}
-	return (i);
+	return (j);
 }
 /*#include <stdio.h>
 #include <string.h>
@@ -39,7 +40,7 @@ int main(void)
 	char str1[] = "Hello World!";
   char str2[30];
   int a = 4;
-  printf("%d\n", ft_strlcpy(str2, str1, a));
+  printf("%ld\n", ft_strlcpy(str2, str1, a));
   printf("%s\n", str1);
   printf("%s\n", str2);
 
