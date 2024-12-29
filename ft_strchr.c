@@ -10,23 +10,22 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-/*#include "libft.h"*/
+#include "libft.h"
+
 char	*ft_strchr(const char *s, int c)
 {
 	unsigned int	i;
-	unsigned int	j;
 
-	j = 0;
 	i = 0;
 	while ((s[i] != '\0'))
 	{
-		if (s[i] == c)
+		if (s[i] == (char)c)
 		{
-			return (&s[i]);
+			return ((char *)&s[i]);
 		}
 		i++;
 	}
-	return ("null");
+	return (NULL);
 }
 /*#include <stdio.h>
 #include <string.h>

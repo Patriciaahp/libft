@@ -10,22 +10,23 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-/*#include "libft.h"*/
-void	*ft_memchr(const void *s, int c, unsigned int n)
+#include "libft.h"
+
+void	*ft_memchr(const void *s, int c, size_t n)
 {
-	int	i;
+	size_t	i;
 
 	i = 0;
-	while ((((char *)s)[i] != '\n') && (n > 0))
+	while ((((unsigned char *)s)[i] != '\n') && (n > 0))
 	{
 		if (((char *)s)[i] == c)
 		{
-			return (&s[i]);
+			return ((void *)&((unsigned char *)s)[i]);
 		}
 		i++;
 		n--;
 	}
-	return ("null");
+	return (NULL);
 }
 
 /*#include <stdio.h>
@@ -35,7 +36,8 @@ int main (void)
 	char str[20] = "algo";
 	
 	
-	printf("%s\n", memchr(str, 'l', 3) );
-	printf("%s\n", ft_memchr(str, 'l', 3) );
+	printf("%p\n", memchr(str, 'l', 3) );
+	printf("%p\n", ft_memchr(str, 'l', 3) );
 }
+
 */
