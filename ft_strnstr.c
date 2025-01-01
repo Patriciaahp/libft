@@ -14,12 +14,12 @@
 
 char	*ft_strnstr(const char *str, const char *to_find, size_t n)
 {
-	int	i;
-	int	j;
+	size_t	i;
+	size_t	j;
 
 	i = 0;
 	j = 0;
-	if (to_find[i] == '\0')
+	if (*to_find == '\0')
 	{
 		return ((char *)str);
 	}
@@ -28,6 +28,8 @@ char	*ft_strnstr(const char *str, const char *to_find, size_t n)
 		while (str[i + j] == to_find[j])
 		{
 			j++;
+//			if (str[i+j] != to_find[j])
+//				return (NULL);
 		}
 		if (to_find[j] == '\0')
 		{
@@ -36,20 +38,19 @@ char	*ft_strnstr(const char *str, const char *to_find, size_t n)
 		i++;
 		n--;
 	}
-	return ("null");
+	return (NULL);
 }
 
-/*
 #include <stdio.h>
 #include <string.h>
 int main(void)
 {
 	  
-	char *a = "Hola, esta es una cadena de prueba";
+	char *a = "lorem ipsum dolor sit amet";
 
-	char *b = "cadena";
+	char *b = "ipsumm";
 
 
-	printf("%s\n", ft_strnstr(a, b, 20));
+	printf("%s\n", ft_strnstr(a, b, 30));
     return (0);
-}*/
+}
