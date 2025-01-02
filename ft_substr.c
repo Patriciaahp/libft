@@ -21,7 +21,10 @@ size_t len)
 
 	i = start;
 	j = 0;
-	sub = malloc(sizeof(char) * len);
+
+	if (!s)
+		return (NULL);
+	sub = malloc(sizeof(char) * len + 1);
 	while (len > 0)
 	{
 		sub[j] = s[i];
@@ -29,16 +32,27 @@ size_t len)
 		j++;
 		len--;
 	}
+	sub[j] = '\0'; 
 	return (sub);
 }
 
 /*#include <stdio.h>
 int main (void)
 {
-	char *str = "holahola";
+	char *str1 = "holahola";
 	int start = 2;
 	size_t len = 3;
 
-	printf("%s\n", ft_substr(str, start, len));
+	printf("%s\n", ft_substr(str1, start, len));
 
+	char	str[] = "lorem ipsum dolor sit amet";
+	char	*strsub;
+
+	printf("%s\n", strsub = ft_substr(str, 0, 10));	
+	char	str2[] = "lorem ipsum dolor sit amet";
+	char	*strsub2;
+
+	printf("%s\n", strsub2 = ft_substr(str2, 7, 10));
+
+	
 }*/
