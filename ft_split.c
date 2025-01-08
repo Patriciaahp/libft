@@ -56,7 +56,7 @@ char	**ft_split(char const *s, char c)
 	return (s3);
 }
 
-
+#include <stdio.h>
 #include <stdlib.h>
 #include <unistd.h>
 
@@ -72,12 +72,12 @@ int		main(int argc, const char *argv[])
 	if ((arg = atoi(argv[1])) == 1)
 	{
 		if (!(tabstr = ft_split("          ", ' ')))
-			ft_print_result("NULL");
+			printf("NULL");
 		else
 		{
 			while (tabstr[i] != NULL)
 			{
-				ft_print_result(tabstr[i]);
+				printf("%s", tabstr[i]);
 				write(1, "\n", 1);
 				i++;
 			}
@@ -86,12 +86,12 @@ int		main(int argc, const char *argv[])
 	else if (arg == 2)
 	{
 		if (!(tabstr = ft_split("lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse", ' ')))
-			ft_print_result("NULL");
+			printf("NULL");
 		else
 		{
 			while (tabstr[i] != NULL)
 			{
-				ft_print_result(tabstr[i]);
+				printf("%s", tabstr[i]);
 				write(1, "\n", 1);
 				i++;
 			}
@@ -100,12 +100,12 @@ int		main(int argc, const char *argv[])
 	else if (arg == 3)
 	{
 		if (!(tabstr = ft_split("   lorem   ipsum dolor     sit amet, consectetur   adipiscing elit. Sed non risus. Suspendisse   ", ' ')))
-			ft_print_result("NULL");
+			printf("NULL");
 		else
 		{
 			while (tabstr[i] != NULL)
 			{
-				ft_print_result(tabstr[i]);
+				printf("%s", tabstr[i]);
 				write(1, "\n", 1);
 				i++;
 			}
@@ -114,12 +114,12 @@ int		main(int argc, const char *argv[])
 	else if (arg == 4)
 	{
 		if (!(tabstr = ft_split("lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor. Cras elementum ultricies diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi.", 'i')))
-			ft_print_result("NULL");
+			printf("NULL");
 		else
 		{
 			while (tabstr[i] != NULL)
 			{
-				ft_print_result(tabstr[i]);
+				printf("%s", tabstr[i]);
 				write(1, "\n", 1);
 				i++;
 			}
@@ -128,12 +128,12 @@ int		main(int argc, const char *argv[])
 	else if (arg == 5)
 	{
 		if (!(tabstr = ft_split("lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor. Cras elementum ultricies diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi.", 'z')))
-			ft_print_result("NULL");
+			printf("NULL");
 		else
 		{
 			while (tabstr[i] != NULL)
 			{
-				ft_print_result(tabstr[i]);
+				printf("%s", tabstr[i]);
 				write(1, "\n", 1);
 				i++;
 			}
@@ -142,10 +142,9 @@ int		main(int argc, const char *argv[])
 	else if (arg == 6)
 	{
 		if (!(tabstr = ft_split("", 'z')))
-			ft_print_result("NULL");
-		else
-			if (!tabstr[0])
-				ft_print_result("ok\n");
+			printf("NULL");
+		else if (!tabstr[0])
+			printf("ok\n");
 	}
 	return (0);
 }
