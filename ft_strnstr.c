@@ -20,27 +20,25 @@ char	*ft_strnstr(const char *str, const char *to_find, size_t n)
 	i = 0;
 	j = 0;
 	if (*to_find == '\0')
-	{
 		return ((char *)str);
-	}
 	while (str[i] != '\0' && n > 0)
 	{
-		while (str[i + j] == to_find[j])
+		while (str[i + j] == to_find[j] && n > 0)
 		{
 			j++;
-//			if (str[i+j] != to_find[j])
-//				return (NULL);
+			n--;
 		}
+		if (j > 0 && to_find[j] != '\0')
+			return (NULL);
 		if (to_find[j] == '\0')
-		{
 			return ((char *)&str[i]);
-		}
 		i++;
 		n--;
 	}
 	return (NULL);
 }
 
+/*
 #include <stdio.h>
 #include <string.h>
 int main(void)
@@ -48,9 +46,9 @@ int main(void)
 	  
 	char *a = "lorem ipsum dolor sit amet";
 
-	char *b = "ipsumm";
+	char *b = "dolor";
 
 
-	printf("%s\n", ft_strnstr(a, b, 30));
+	printf("%s\n", ft_strnstr(a, b, 15));
     return (0);
-}
+}*/
