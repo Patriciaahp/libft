@@ -6,18 +6,19 @@
 /*   By: pahernan <pahernan@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/16 10:08:54 by pahernan          #+#    #+#             */
-/*   Updated: 2024/12/16 11:51:19 by pahernan         ###   ########.fr       */
+/*   Updated: 2025/01/09 10:52:17 by pahernan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strtrim(char const *s1, char const *set)
+/* char	*ft_strtrim(char const *s1, char const *set)
 {
 	char	*s2;
 	int		i;
 	int		j;
 	int		k;
+	int		l;
 	int		length;
 
 	if (!s1 || !set)
@@ -26,10 +27,10 @@ char	*ft_strtrim(char const *s1, char const *set)
 	i = 0;
 	j = 0;
 	k = 0;
+	l = 0;
 	length = 0;
 	while (s1[length])
 		length++;
-	length--;
 	s2 = malloc(sizeof(char) * (length + 1));
 	if (!s1||!set)
 		return (NULL);
@@ -37,48 +38,44 @@ char	*ft_strtrim(char const *s1, char const *set)
 	while (k >= 0)
 	{
 		if (s1[k] == set[j])
+		{
 			i++;
-		j++;
+			j++;
+		}
 		k--;
 	}
+	if(set[j] != '\0')
+		i = 0;
 	j = 0;
 	k=0;
 	while (k < length - i)
 	{
-		if (s1[k] == set[j])
-			k++;
-		else
-		{
-			s2[j] = s1[k];
-			j++;
-		}
+
+			s2[l] = s1[k];
+		l++;
 		k++;
 	}
 
-	s2[j] = '\0';
+	s2[l] = '\0';
 
 	return (s2);
 }
 #include <stdio.h>
 
-int		main(int argc, const char *argv[])
+int		main(void)
 {
 	char	*strtrim;
-	int		arg;
 
 
-	if (argc == 1)
-		return (0);
-	else if ((arg = atoi(argv[1])) == 1)
-	{
-		char s1[] = "lorem \n ipsum \t dolor \n sit \t amet";
-		if (!(strtrim = ft_strtrim(s1, " ")))
-			printf("%s\n","NULL");
-		else
-			printf("%s\n",strtrim);
-		if (strtrim == s1)
-			printf("%s\n","\nA new string was not returned");
-	}
+	 char s1[] = "lorem \n ipsum \t dolor \n sit \t amet";
+    if (!(strtrim = ft_strtrim(s1, " ")))
+        printf("NULL");
+    else
+        printf("%s\n",strtrim);
+    if (strtrim == s1)
+        printf("\nA new string was not returned");
+	
+	
 	else if (arg == 2)
 	{
 		char s1[] = "lorem ipsum dolor sit amet";
@@ -88,8 +85,7 @@ int		main(int argc, const char *argv[])
 			printf("%s\n",strtrim);
 		if (strtrim == s1)
 			printf("%s\n","\nA new string was not returned");
-	}
-	else if (arg == 3)
+	}else if (arg == 3)
 	{
 		char s1[] = " lorem ipsum dolor sit amet";
 		if (!(strtrim = ft_strtrim(s1, "l ")))
@@ -108,8 +104,7 @@ int		main(int argc, const char *argv[])
 			printf("%s\n",strtrim);
 		if (strtrim == s1)
 			printf("%s\n","\nA new string was not returned");
-	}
-	else if (arg == 5)
+	}else if (arg == 5)
 	{
 		char s1[] = "          ";
 		if (!(strtrim = ft_strtrim(s1, " ")))
@@ -119,5 +114,6 @@ int		main(int argc, const char *argv[])
 		if (strtrim == s1)
 			printf("%s\n","\nA new string was not returned");
 	}
+
 	return (0);
-}
+} */
