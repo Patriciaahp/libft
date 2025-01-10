@@ -29,6 +29,24 @@ static int	ft_numlen(int n)
 	return (i);
 }
 
+static void	ft_strnum(char *s, int *i, int n)
+{
+	while (*i > 0)
+	{
+		if (s[0] == '-')
+		{
+			s[(*i)-- - 1] = (n % 10) + '0';
+			n /= 10;
+			s[0] = '-';
+		}
+		else
+		{
+			s[(*i)-- - 1] = (n % 10) + '0';
+			n /= 10;
+		}
+	}
+}
+
 char	*ft_itoa(int n)
 {
 	char	*s;
@@ -39,37 +57,15 @@ char	*ft_itoa(int n)
 		return ("-2147483648");
 	i = ft_numlen(n);
 	s = malloc(sizeof(char) * (i + 1));
+	if (!s)
+		return (NULL);
 	j = i;
 	if (n < 0)
 	{
-		n = -n;
 		s[0] = '-';
+		n = -n;
 	}
-	while (i > 0)
-	{
-		if (s[0] == '-')
-		{
-			i--;
-			s[i] = (n % 10) + '0';
-			n /= 10;
-			s[0] = '-';
-		}
-		else
-		{
-			i--;
-			s[i] = (n % 10) + '0';
-			n /= 10;
-		}
-	}
+	ft_strnum(s, &i, n);
 	s[j] = '\0';
-	if (!s)
-		return (NULL);
 	return (s);
-}
-
-#include <stdio.h>
-int main(void)
-{
-	int n = 3;
-	printf("%s\n", ft_itoa(n));
 }
