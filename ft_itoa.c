@@ -40,7 +40,10 @@ char *ft_itoa(int n)
 	i = 0;
 	j = 0;
 	if (n == -2147483648)
+	{
 		s = "-2147483648";
+		return (s);
+	}
 	if (n == 0)
 		s[0] = '0';
 	i = ft_numlen(n);
@@ -54,6 +57,14 @@ char *ft_itoa(int n)
 
 	while (i > 0)
 	{
+		if (s[0] == '-')
+		{
+			i--;
+			s[i] = (n % 10) + '0';
+			n /= 10;
+			s[0] = '-';
+		}
+
 		i--;
 		s[i] = (n % 10) + '0';
 		n /= 10;
@@ -67,6 +78,6 @@ char *ft_itoa(int n)
 #include <stdio.h>
 int main(void)
 {
-	int n = 3023;
+	int n = 0;
 	printf("%s\n", ft_itoa(n));
 }
