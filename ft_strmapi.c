@@ -37,7 +37,7 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 /*#include <stdio.h>
 
 // Función que transforma cada carácter en mayúscula si su índice es par
-char transform(unsigned int i, char c)
+char ft_transform(unsigned int i, char c)
 {
 	if (i % 2 == 0)
 		return (c - 32); // Convierte a mayúscula si es letra minúscula
@@ -50,7 +50,7 @@ int main(void)
 	char *result;
 
 	// Prueba de ft_strmapi con la función transform
-	result = ft_strmapi(str, transform);
+	result = ft_strmapi(str, ft_transform);
 
 	if (result)
 	{

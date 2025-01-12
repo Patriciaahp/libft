@@ -26,3 +26,24 @@ void ft_striteri(char *s, void (*f)(unsigned int,
 		i++;
 	}
 }
+
+/*#include <stdio.h>
+
+// Función que convierte a mayúscula los caracteres en índices pares
+void modify(unsigned int i, char *c)
+{
+    if (i % 2 == 0 && *c >= 'a' && *c <= 'z')  // Si índice es par y el carácter es minúscula
+        *c = *c - 32;                         // Convierte a mayúscula
+}
+
+int main(void)
+{
+    char str[] = "hola mundo";
+
+    printf("Antes: %s\n", str);
+    ft_striteri(str, modify);  // Aplica ft_striteri con la función modify
+    printf("Después: %s\n", str);
+
+    return (0);
+}
+*/
