@@ -21,7 +21,6 @@ size_t len)
 
 	i = start;
 	j = 0;
-
 	if (!s)
 		return (NULL);
 	sub = malloc(sizeof(char) * len + 1);
@@ -32,7 +31,7 @@ size_t len)
 		j++;
 		len--;
 	}
-	sub[j] = '\0'; 
+	sub[j] = '\0';
 	return (sub);
 }
 
