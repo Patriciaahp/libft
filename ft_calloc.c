@@ -19,6 +19,8 @@ void	*ft_calloc(size_t num, size_t size)
 
 	i = 0;
 	arr = malloc(num * size);
+	if (!arr)
+		return (NULL);
 	while (((char *)arr)[i])
 	{
 		((char *)arr)[i] = '\0';

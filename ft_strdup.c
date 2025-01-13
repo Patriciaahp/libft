@@ -21,6 +21,8 @@ char	*ft_strdup(const char *string)
 	while (string[i])
 		i++;
 	string2 = malloc(sizeof(char) * (i + 1));
+	if (!string2)
+		return (NULL);
 	i = 0;
 	while (string[i] != '\0')
 	{
