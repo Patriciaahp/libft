@@ -25,6 +25,8 @@ size_t len)
 		return (NULL);
 	if (start >= ft_strlen(s))
 		return (ft_strdup(""));
+	if (len > ft_strlen(s) - start)
+		len = ft_strlen(s) - start;
 	sub = malloc(sizeof(char) * len + 1);
 	if (!sub)
 		return (NULL);

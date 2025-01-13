@@ -12,7 +12,7 @@
 
 #include "libft.h"
 
-/* char	*ft_strtrim(char const *s1, char const *set)
+char	*ft_strtrim(char const *s1, char const *set)
 {
 	char	*s2;
 	int		i;
@@ -60,6 +60,7 @@
 
 	return (s2);
 }
+/*
 #include <stdio.h>
 
 int		main(void)

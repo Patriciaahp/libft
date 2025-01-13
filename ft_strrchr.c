@@ -19,12 +19,12 @@ char	*ft_strrchr(const char *s, int c)
 	i = 0;
 	while (s[i] != '\0')
 		i++;
-	if (c == '\0')
+	if ((unsigned char)c == '\0')
 		return ((char *)&s[i]);
 	while (i > 0)
 	{
 		i--;
-		if (s[i] == (char)c)
+		if ((unsigned char)s[i] == (unsigned char)c)
 		{
 			return ((char *)&s[i]);
 		}
