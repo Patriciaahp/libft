@@ -6,7 +6,7 @@
 /*   By: pahernan <pahernan@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/16 10:08:54 by pahernan          #+#    #+#             */
-/*   Updated: 2025/01/15 11:01:27 by pahernan         ###   ########.fr       */
+/*   Updated: 2025/01/15 11:44:32 by pahernan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,17 +51,16 @@ char	*ft_strtrim(char const *s1, char const *set)
 	z = 0;
 	while (k < length - i)
 	{
-		while ((s1[k] == set[j] || s1[k] == ' ' ) && z == 0)
+		while (((s1[k] == set[j] || s1[k] == ' ' ) && z == 0) && k <= length - i)
 				k++;
 			s2[l] = s1[k];
 				l++;
 				k++;
-				z = 1;
+				z++;
 	}
 
 	s2[l] = '\0';
 
 	return (s2);
 }
-
 
