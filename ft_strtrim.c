@@ -6,7 +6,7 @@
 /*   By: pahernan <pahernan@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/16 10:08:54 by pahernan          #+#    #+#             */
-/*   Updated: 2025/01/15 12:17:26 by pahernan         ###   ########.fr       */
+/*   Updated: 2025/01/15 12:54:37 by pahernan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,15 +38,17 @@ char	*ft_strtrim(char const *s1, char const *set)
 		return (NULL);
 	k = length;
 	while (k >= 0)
-	{
+	{		
+
 		while (set[j] == ' ')
 			j++;
-		while ((s1[k] == set[j] || s1[k] == ' ' ) && k == length - z)
+		if ((s1[k] == set[j] || s1[k] == ' ' ) && k == length - z)
 		{
 			i++;
+			j++;
 			z++;
 		}
-		k--;
+	k--;
 	}
 	k=0;
 	z = 0;
@@ -67,50 +69,3 @@ char	*ft_strtrim(char const *s1, char const *set)
 	return (s2);
 }
 
-#include <stdio.h>
-int main(void)
-{
-		//char * s = ft_strtrim("   xxxtripouille", " x");
-		printf("%s",ft_strtrim("tripouille   xxx", " x"));
-	return (0);
-}
-
-/*int main(void)
-{
-
-
-	char * s = ft_strtrim("   xxxtripouille", " x");
-	 check(!strcmp(s, "tripouille"));
-	mcheck(s, strlen("tripouille") + 1); free(s); showLeaks();
-
-	s = ft_strtrim("tripouille   xxx", " x");
-	 check(!strcmp(s, "tripouille"));
-	 mcheck(s, strlen("tripouille") + 1); free(s); showLeaks();
-
-	s = ft_strtrim("   xxxtripouille   xxx", " x");
-	 check(!strcmp(s, "tripouille"));
-	 mcheck(s, strlen("tripouille") + 1); free(s); showLeaks();
-	
-	s = ft_strtrim("   xxx   xxx", " x");
-	 check(!strcmp(s, ""));
-	 mcheck(s, 1); free(s); showLeaks();
-
-	s = ft_strtrim("", "123");
-	 check(!strcmp(s, ""));
-	 mcheck(s, 1); free(s); showLeaks();
-
-	s = ft_strtrim("123", "");
-	 check(!strcmp(s, "123"));
-	 mcheck(s, 4); free(s); showLeaks();
-
-	s = ft_strtrim("", "");
-	 check(!strcmp(s, ""));
-	 mcheck(s, 1); free(s); showLeaks();
-	
-	s = ft_strtrim("abcdba", "acb");
-	 check(!strcmp(s, "d"));
- 	mcheck(s, 2); free(s); showLeaks();
-	
-	write(1, "\n", 1);
-	return (0);
-}*/
