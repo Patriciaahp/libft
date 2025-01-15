@@ -12,48 +12,72 @@
 
 #include "libft.h"
 
-char	*ft_strtrim(char const *s1, char const *set)
+static int	ft_length(const char *s)
 {
-	char	*s2;
-	int		i;
-	int		j;
-	int		k;
-	int		l;
-	int		length;
+	int	length;
 
-	if (!s1 || !set)
-		return (NULL);
 	length = 0;
-	while (s1[length])
+	while (s[length])
 		length++;
+	return (length);
+}
+
+static int	ft_trimleft(const char *s, const char *set, int length)
+{
+	int	i;
+	int	j;
+
 	i = 0;
-	k = length - 1;
-	while (k >= 0)
+	while (i < length)
 	{
 		j = 0;
-		while (set[j] && s1[k] != set[j])
+		while (set[j] && s[i] != set[j])
 			j++;
 		if (set[j] == '\0')
 			break ;
 		i++;
-		k--;
 	}
-	k = 0;
-	while (k < length - i)
+	return (i);
+}
+
+static int	ft_trimright(const char *s, const char *set, int length,
+int i)
+{
+	int	k;
+	int	j;
+
+	k = length - 1;
+	while (k >= i)
 	{
 		j = 0;
-		while (set[j] && s1[k] != set[j])
+		while (set[j] && s[k] != set[j])
 			j++;
 		if (set[j] == '\0')
 			break ;
-		k++;
+		k--;
 	}
-	s2 = malloc(sizeof(char) * (length - i - k + 1));
+	return (k);
+}
+
+char	*ft_strtrim(char const *s1, char const *set)
+{
+	char	*s2;
+	int		i;
+	int		k;
+	int		length;
+	int		l;
+
+	if (!s1 || !set)
+		return (NULL);
+	length = ft_length(s1);
+	i = ft_trimleft(s1, set, length);
+	k = ft_trimright(s1, set, length, i);
+	s2 = malloc(sizeof(char) * (k - i + 2));
 	if (!s2)
 		return (NULL);
 	l = 0;
-	while (k < length - i)
-		s2[l++] = s1[k++];
+	while (i <= k)
+		s2[l++] = s1[i++];
 	s2[l] = '\0';
 	return (s2);
 }
