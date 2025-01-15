@@ -20,52 +20,40 @@ char	*ft_strtrim(char const *s1, char const *set)
 	int		k;
 	int		l;
 	int		length;
-	int		z;
 
 	if (!s1 || !set)
 		return (NULL);
-
-	i = 0;
-	j = 0;
-	k = 0;
-	l = 0;
-	z = 1;
 	length = 0;
 	while (s1[length])
 		length++;
-	s2 = malloc(sizeof(char) * (length + 1));
-	if (!s2)
-		return (NULL);
-	k = length;
+	i = 0;
+	k = length - 1;
 	while (k >= 0)
-	{		
-
-		while (set[j] == ' ')
+	{
+		j = 0;
+		while (set[j] && s1[k] != set[j])
 			j++;
-		if ((s1[k] == set[j] || s1[k] == ' ' ) && k == length - z)
-		{
-			i++;
-			j++;
-			z++;
-		}
-	k--;
+		if (set[j] == '\0')
+			break ;
+		i++;
+		k--;
 	}
-	k=0;
-	z = 0;
+	k = 0;
 	while (k < length - i)
 	{
-		while (set[j] == ' ')
+		j = 0;
+		while (set[j] && s1[k] != set[j])
 			j++;
-		while (((s1[k] == set[j] || s1[k] == ' ' ) && z == 0) && k <= length - i)
-				k++;
-			s2[l] = s1[k];
-				l++;
-				k++;
-				z++;
+		if (set[j] == '\0')
+			break ;
+		k++;
 	}
-
+	s2 = malloc(sizeof(char) * (length - i - k + 1));
+	if (!s2)
+		return (NULL);
+	l = 0;
+	while (k < length - i)
+		s2[l++] = s1[k++];
 	s2[l] = '\0';
-
 	return (s2);
 }
-
