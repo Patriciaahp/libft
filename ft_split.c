@@ -12,71 +12,67 @@
 
 #include "libft.h"
 
-static int	find_char(char const *s, char c, int *i, char **s3)
+static int	word_len(const char *s, char c, int *i)
 {
-	int	k = 0;
-	int	l = 0;
-	int word_len;
-	int temp;
+	int	len;
 
-	while (s[*i] != '\0')
+	len = 0;
+	while (s[*i] && s[*i] != c)
 	{
-		if (s[*i] == c)
-		{
-			if (l > 0)
-			{
-				s3[k][l] = '\0';
-				k++;
-				l = 0;
-			}
-		}
-		else
-		{
-			if (l == 0)
-			{
-				word_len = 0;
-				temp = *i;
-				while (s[temp] != '\0' && s[temp] != c)
-				{
-					word_len++;
-					temp++;
-				}
-				s3[k] = (char *)malloc(sizeof(char) * (word_len + 1));
-				if (!s3[k])
-					return (k);
-			}
-			s3[k][l] = s[*i];
-			l++;
-		}
+		len++;
 		(*i)++;
 	}
-	if (l > 0)
+	return (len);
+}
+
+static int	find_words(char const *s, char c, int *i, char **s3)
+{
+	int	k;
+	int	l;
+
+	k = 0;
+	while (s[*i])
 	{
-		s3[k][l] = '\0';
-		k++;
+		if (s[*i] == c)
+			(*i)++;
+		else
+		{
+			l = word_len(s, c, i);
+			s3[k] = (char *)malloc(sizeof(char) * (l + 1));
+			if (!s3[k])
+				return (k);
+			ft_strlcpy(s3[k], &s[*i - l], l + 1);
+			k++;
+		}
 	}
 	return (k);
 }
 
 char	**ft_split(char const *s, char c)
 {
-	int		i = 0;
-	int		k = 0;
+	int		i;
+	int		k;
+	int		count;
 	char	**s3;
 
+	i = 0;
+	k = 0;
 	if (!s)
 		return (NULL);
+	count = 0;
 	while (s[i])
 	{
 		if (s[i] != c && (i == 0 || s[i - 1] == c))
-			k++;
+			count++;
 		i++;
 	}
-	s3 = (char **)malloc(sizeof(char *) * (k + 1));
+
+	s3 = (char **)malloc(sizeof(char *) * (count + 1));
 	if (!s3)
 		return (NULL);
+
 	i = 0;
-	k = find_char(s, c, &i, s3);
+	k = find_words(s, c, &i, s3);
 	s3[k] = NULL;
 	return (s3);
 }
