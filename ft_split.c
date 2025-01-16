@@ -6,13 +6,13 @@
 /*   By: pahernan <pahernan@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/16 10:51:27 by pahernan          #+#    #+#             */
-/*   Updated: 2025/01/09 12:43:51 by pahernan         ###   ########.fr       */
+/*   Updated: 2025/01/16 09:36:21 by pahernan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int	word_len(const char *s, char c, int *i)
+static int	ft_wordlen(const char *s, char c, int *i)
 {
 	int	len;
 
@@ -25,7 +25,7 @@ static int	word_len(const char *s, char c, int *i)
 	return (len);
 }
 
-static int	find_words(char const *s, char c, int *i, char **s3)
+static int	ft_findwords(char const *s, char c, int *i, char **s3)
 {
 	int	k;
 	int	l;
@@ -37,10 +37,15 @@ static int	find_words(char const *s, char c, int *i, char **s3)
 			(*i)++;
 		else
 		{
-			l = word_len(s, c, i);
+			l = ft_wordlen(s, c, i);
 			s3[k] = (char *)malloc(sizeof(char) * (l + 1));
 			if (!s3[k])
-				return (k);
+			{
+				while (k > 0)
+					free(s3[k-- - 1]);
+				free(s3);
+				return (-1);
+			}
 			ft_strlcpy(s3[k], &s[*i - l], l + 1);
 			k++;
 		}
@@ -66,13 +71,13 @@ char	**ft_split(char const *s, char c)
 			count++;
 		i++;
 	}
-
 	s3 = (char **)malloc(sizeof(char *) * (count + 1));
 	if (!s3)
 		return (NULL);
-
 	i = 0;
-	k = find_words(s, c, &i, s3);
-	s3[k] = NULL;
+	k = ft_findwords(s, c, &i, s3);
+	if (k == -1)
+		return (NULL);
+	s3[k] = '\0';
 	return (s3);
 }
