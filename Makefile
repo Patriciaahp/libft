@@ -6,7 +6,7 @@
 #    By: pahernan <pahernan@student.42malaga.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/12/28 12:11:43 by pahernan          #+#    #+#              #
-#    Updated: 2024/12/28 12:11:43 by pahernan         ###   ########.fr        #
+#    Updated: 2025/01/16 13:06:07 by pahernan         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -31,6 +31,5 @@ clean:
 	rm -f $(OBJS)
 fclean: clean
 	rm -f $(NAME)
-	echo "$(NAME) eliminado"
 re: fclean all
 .PHONY: all clean fclean re
