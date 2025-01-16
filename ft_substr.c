@@ -6,7 +6,7 @@
 /*   By: pahernan <pahernan@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/16 09:12:42 by pahernan          #+#    #+#             */
-/*   Updated: 2024/12/16 11:39:12 by pahernan         ###   ########.fr       */
+/*   Updated: 2025/01/16 10:34:59 by pahernan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,24 +40,3 @@ size_t len)
 	sub[j] = '\0';
 	return (sub);
 }
-
-/*#include <stdio.h>
-int main (void)
-{
-	char *str1 = "holahola";
-	int start = 2;
-	size_t len = 3;
-
-	printf("%s\n", ft_substr(str1, start, len));
-
-	char	str[] = "lorem ipsum dolor sit amet";
-	char	*strsub;
-
-	printf("%s\n", strsub = ft_substr(str, 0, 10));	
-	char	str2[] = "lorem ipsum dolor sit amet";
-	char	*strsub2;
-
-	printf("%s\n", strsub2 = ft_substr(str2, 7, 10));
-
-	
-}*/

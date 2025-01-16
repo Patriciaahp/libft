@@ -6,7 +6,7 @@
 /*   By: pahernan <pahernan@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/04 12:48:27 by pahernan          #+#    #+#             */
-/*   Updated: 2024/12/11 09:36:05 by pahernan         ###   ########.fr       */
+/*   Updated: 2025/01/16 10:33:37 by pahernan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,18 +25,3 @@ void	*ft_memset(void *s, int c, size_t n)
 	}
 	return (s);
 }
-
-/*#include <stdio.h>
-#include <string.h>
-int main(void)
-{
-  char str[20] = "Hello";
-    
-   
-    ft_memset(str, 'A',15);
-	printf("%s\n", str); 
-    memset(str, 'B',15);
-    printf("%s\n", str);  
-    return 0;
-}
-*/

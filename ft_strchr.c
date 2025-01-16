@@ -6,7 +6,7 @@
 /*   By: pahernan <pahernan@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/04 13:17:34 by pahernan          #+#    #+#             */
-/*   Updated: 2024/12/11 11:52:26 by pahernan         ###   ########.fr       */
+/*   Updated: 2025/01/16 10:33:56 by pahernan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,15 +33,3 @@ char	*ft_strchr(const char *s, int c)
 	}
 	return (NULL);
 }
-/*#include <stdio.h>
-#include <string.h>
-int main (void)
-{
-	char *a = "holaghjofgjho";
-	char *b = "holaghjofgjho";
-	int c = 'o';
-
-	  printf("%s\n", ft_strchr(a, c));
-	  printf("%s\n", strchr(b, c));
-}
-*/

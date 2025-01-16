@@ -6,7 +6,7 @@
 /*   By: pahernan <pahernan@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/16 09:54:20 by pahernan          #+#    #+#             */
-/*   Updated: 2024/12/16 11:41:56 by pahernan         ###   ########.fr       */
+/*   Updated: 2025/01/16 10:34:11 by pahernan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,14 +31,3 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	ft_strlcpy(s3 + i, s2, j + 1);
 	return (s3);
 }
-
-/*#include <stdio.h>
-
-int main(void)
-{
-	char *s1 = "hola";
-	char *s2 = "gato";
-	printf("%s\n", ft_strjoin(s1, s2));
-	return (0);
-}
-*/

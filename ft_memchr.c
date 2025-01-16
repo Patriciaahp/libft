@@ -6,7 +6,7 @@
 /*   By: pahernan <pahernan@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/11 09:34:54 by pahernan          #+#    #+#             */
-/*   Updated: 2024/12/11 11:49:06 by pahernan         ###   ########.fr       */
+/*   Updated: 2025/01/16 10:33:15 by pahernan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,16 +28,3 @@ void	*ft_memchr(const void *s, int c, size_t n)
 	}
 	return (NULL);
 }
-
-/*#include <stdio.h>
-#include <string.h>
-int main (void)
-{
-	char str[20] = "algo";
-	
-	
-	printf("%p\n", memchr(str, 'l', 3) );
-	printf("%p\n", ft_memchr(str, 'l', 3) );
-}
-
-*/

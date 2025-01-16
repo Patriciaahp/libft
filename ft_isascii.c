@@ -6,7 +6,7 @@
 /*   By: pahernan <pahernan@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/02 14:17:30 by pahernan          #+#    #+#             */
-/*   Updated: 2024/12/12 11:11:52 by pahernan         ###   ########.fr       */
+/*   Updated: 2025/01/16 10:33:00 by pahernan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,15 +20,3 @@ int	ft_isascii(int c)
 	}
 	return (0);
 }
-/*#include <stdio.h>
-#include <ctype.h>
-int main(void)
-{
-    int a = 128;
-
-    int result = ft_isascii(a);
-    int result2 = isascii(a);
-    printf("%d\n", result);
-    printf("%d\n", result2);
-}
-*/

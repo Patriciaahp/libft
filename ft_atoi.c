@@ -6,7 +6,7 @@
 /*   By: pahernan <pahernan@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/02 16:11:41 by pahernan          #+#    #+#             */
-/*   Updated: 2024/12/11 11:41:16 by pahernan         ###   ########.fr       */
+/*   Updated: 2025/01/16 10:32:34 by pahernan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,15 +36,3 @@ int	ft_atoi(const char *str)
 	}
 	return (res * sign);
 }
-
-/*
-#include <stdio.h>
-#include <string.h>
-
-int main (void)
-{
-	char *str = "  \t \n    	-1234ab567";
-printf("%d\n", ft_atoi(str));
-
-	return (0);
-}*/

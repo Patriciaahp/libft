@@ -6,7 +6,7 @@
 /*   By: pahernan <pahernan@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/12 14:52:00 by pahernan          #+#    #+#             */
-/*   Updated: 2024/12/16 11:06:39 by pahernan         ###   ########.fr       */
+/*   Updated: 2025/01/16 10:34:00 by pahernan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,16 +34,3 @@ char	*ft_strdup(const char *string)
 		return (string2);
 	return (NULL);
 }
-/*#include <stdio.h>
-#include <string.h>
-int main(void)
-{
- char *s1 = "hola";
- char *s2;
-s2 = ft_strdup(s1);
-
-      printf("The new string is: %s\n", s2);
-	
-	return (0);
-	
-}*/

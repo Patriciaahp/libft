@@ -6,7 +6,7 @@
 /*   By: pahernan <pahernan@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/02 14:23:26 by pahernan          #+#    #+#             */
-/*   Updated: 2024/12/11 09:14:58 by pahernan         ###   ########.fr       */
+/*   Updated: 2025/01/16 10:33:06 by pahernan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,15 +20,3 @@ int	ft_isprint(int c)
 	}
 	return (0);
 }
-/*#include <stdio.h>
-#include <ctype.h>
-int main(void)
-{
-    char a = 127;
-
-    int result = ft_isprint(a);
-    int result2 = isprint(a);
-    printf("%d\n", result);
-    printf("%d\n", result2);
-}
-*/

@@ -6,7 +6,7 @@
 /*   By: pahernan <pahernan@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/10 19:39:02 by pahernan          #+#    #+#             */
-/*   Updated: 2025/01/10 19:39:02 by pahernan         ###   ########.fr       */
+/*   Updated: 2025/01/16 10:34:35 by pahernan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,34 +36,3 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	str[i] = '\0';
 	return (str);
 }
-/*#include <stdio.h>
-
-// Función que transforma cada carácter en mayúscula si su índice es par
-char ft_transform(unsigned int i, char c)
-{
-	if (i % 2 == 0)
-		return (c - 32); // Convierte a mayúscula si es letra minúscula
-	return (c);
-}
-
-int main(void)
-{
-	char str[] = "hola mundo";
-	char *result;
-
-	// Prueba de ft_strmapi con la función transform
-	result = ft_strmapi(str, ft_transform);
-
-	if (result)
-	{
-		printf("Original: %s\n", str);
-		printf("Transformado: %s\n", result);
-		free(result); // Liberar la memoria asignada
-	}
-	else
-	{
-		printf("Error: ft_strmapi devolvió NULL\n");
-	}
-
-	return (0);
-}*/

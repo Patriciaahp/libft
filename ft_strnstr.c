@@ -6,7 +6,7 @@
 /*   By: pahernan <pahernan@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/10 11:45:23 by pahernan          #+#    #+#             */
-/*   Updated: 2024/12/11 11:55:24 by pahernan         ###   ########.fr       */
+/*   Updated: 2025/01/16 10:34:46 by pahernan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,18 +33,3 @@ char	*ft_strnstr(const char *str, const char *to_find, size_t n)
 	}
 	return (NULL);
 }
-
-/*
-#include <stdio.h>
-#include <string.h>
-int main(void)
-{
-	  
-	char *a = "lorem ipsum dolor sit amet";
-
-	char *b = "dolor";
-
-
-	printf("%s\n", ft_strnstr(a, b, 15));
-    return (0);
-}*/

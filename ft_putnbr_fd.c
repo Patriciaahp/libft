@@ -6,7 +6,7 @@
 /*   By: pahernan <pahernan@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/10 19:39:13 by pahernan          #+#    #+#             */
-/*   Updated: 2025/01/10 19:39:13 by pahernan         ###   ########.fr       */
+/*   Updated: 2025/01/16 10:33:47 by pahernan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,10 +31,3 @@ void	ft_putnbr_fd(int n, int fd)
 	}
 	ft_putchar_fd (n + '0', fd);
 }
-
-/*#include <unistd.h> 
-int main(void)
-{
-	ft_putnbr_fd(-42, 1);
-	return(0);
-}*/

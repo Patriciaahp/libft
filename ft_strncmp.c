@@ -6,7 +6,7 @@
 /*   By: pahernan <pahernan@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/02 14:55:18 by pahernan          #+#    #+#             */
-/*   Updated: 2024/12/11 11:54:33 by pahernan         ###   ########.fr       */
+/*   Updated: 2025/01/16 10:34:40 by pahernan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,15 +28,3 @@ int	ft_strncmp(const char *s1, const char *s2, size_t n)
 	}
 	return (0);
 }
-/*#include <stdio.h>
-#include <string.h>
-int main(void)
-{
-char *s1 = "\200";
-char *s2 = "\0";
-int n = 5;
-printf("%d\n", ft_strncmp(s1, s2, n));
-printf("%d\n", strncmp(s1, s2, n));
-
-	return (0);
-}*/

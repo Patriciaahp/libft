@@ -6,7 +6,7 @@
 /*   By: pahernan <pahernan@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/05 13:35:26 by pahernan          #+#    #+#             */
-/*   Updated: 2025/01/09 09:45:29 by pahernan         ###   ########.fr       */
+/*   Updated: 2025/01/16 10:32:39 by pahernan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,21 +24,3 @@ void	ft_bzero(void *s, size_t n)
 		i++;
 	}
 }
-
-/*
-#include <stdio.h>
-#include <string.h>
-int main(void)
-{
-    char a[] = "sdfgh ds g";
-	char c[] = "sdfgh ds g";
-	int b = 1;
-
-printf("%s\n", a);
-   ft_bzero(a, b);
-   printf("%s\n", a);
-   printf("%s\n", c);
-     bzero(c, b);
-	 printf("%s\n", c);
-}
-*/

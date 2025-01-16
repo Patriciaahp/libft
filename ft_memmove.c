@@ -6,7 +6,7 @@
 /*   By: pahernan <pahernan@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/11 10:54:41 by pahernan          #+#    #+#             */
-/*   Updated: 2024/12/14 09:29:34 by pahernan         ###   ########.fr       */
+/*   Updated: 2025/01/16 10:33:33 by pahernan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,21 +38,3 @@ void	*ft_memmove(void *dest, const void *src, size_t n)
 	}
 	return (dest);
 }
-
-/*
-#include <stdio.h>
-#include <string.h>
-int main (void)
-{
- char str[] = "ABCDEFGHIJ";
-
-  
-    printf("Antes de memmove: %s\n", str);  
-
-
-    ft_memmove(str + 2, str, 6);
-
-
-    printf("Después de memmove: %s\n", str);  
-
-}*/
