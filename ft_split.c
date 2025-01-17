@@ -6,7 +6,7 @@
 /*   By: pahernan <pahernan@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/16 10:51:27 by pahernan          #+#    #+#             */
-/*   Updated: 2025/01/16 09:36:21 by pahernan         ###   ########.fr       */
+/*   Updated: 2025/01/17 12:17:33 by pahernan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,6 +78,6 @@ char	**ft_split(char const *s, char c)
 	k = ft_findwords(s, c, &i, s3);
 	if (k == -1)
 		return (NULL);
-	s3[k] = '\0';
+	s3[k] = NULL;
 	return (s3);
 }
