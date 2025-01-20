@@ -6,7 +6,7 @@
 /*   By: pahernan <pahernan@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/17 17:56:22 by pahernan          #+#    #+#             */
-/*   Updated: 2025/01/17 17:56:22 by pahernan         ###   ########.fr       */
+/*   Updated: 2025/01/20 10:45:15 by pahernan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,12 @@
 
 void	ft_lstadd_front(t_list **lst, t_list *new)
 {
-	if (new)
+	if (lst && new)
 	{
 		new->next = *lst;
 		*lst = new;
 	}
+	return ;
 }
 
 /*#include "libft.h"

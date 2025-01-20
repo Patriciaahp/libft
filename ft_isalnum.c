@@ -6,7 +6,7 @@
 /*   By: pahernan <pahernan@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/02 14:06:50 by pahernan          #+#    #+#             */
-/*   Updated: 2025/01/16 10:32:52 by pahernan         ###   ########.fr       */
+/*   Updated: 2025/01/20 10:42:10 by pahernan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ int	ft_isalnum(int c)
 	if ((c >= '0' && c <= '9') || (c >= 'a' && c <= 'z')
 		|| (c >= 'A' && c <= 'Z'))
 	{
-		return (c);
+		return (1);
 	}
 	return (0);
 }

@@ -6,7 +6,7 @@
 /*   By: pahernan <pahernan@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/02 13:07:50 by pahernan          #+#    #+#             */
-/*   Updated: 2025/01/16 10:32:57 by pahernan         ###   ########.fr       */
+/*   Updated: 2025/01/20 10:42:45 by pahernan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ int	ft_isalpha(int c)
 {
 	if ((c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z'))
 	{
-		return (c);
+		return (1);
 	}
 	return (0);
 }
